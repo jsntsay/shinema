@@ -16,14 +16,7 @@
 /log/*
 /tmp/*
 
-*.rbc
-*.sassc
-.sass-cache
-capybara-*.html
-.rspec
-.rvmrc
-
-public/system/*
+/public/system/*
 /coverage/
 /spec/tmp/*
 **.orig
