@@ -3,7 +3,7 @@ Shinema::Application.routes.draw do
 
   root 'videos#index'
 
-  search get 'search' => 'videos#search'
+  get 'search' => 'videos#search', as: :search
 
   get 'all' => 'videos#all'
 
