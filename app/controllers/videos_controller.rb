@@ -39,7 +39,16 @@ class VideosController < ApplicationController
   # POST /videos
   # POST /videos.json
   def create
-    @video = Video.new(video_params)
+    @video = Video.new
+
+	@video.accessible = VideoConfig::DYNAMIC_FIELDS['attributes'].keys
+
+    puts "keys"	
+	for key in VideoConfig::DYNAMIC_FIELDS['attributes'].keys
+		puts key
+	end
+
+	@video.attributes = video_params
 
     respond_to do |format|
       if @video.save
