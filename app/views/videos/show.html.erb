@@ -1,14 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Title:</strong>
-  <%= @video.title %>
-</p>
-
-<p>
-  <strong>Link:</strong>
-  <%= @video.link %>
-</p>
+<% @video.attributes.each do |attr_name, attr_value| %>
+	<% if attr_name != "_id" %> 
+		<p>
+		<strong> <%= attr_name %> </strong>
+		<%= attr_value %>
+		</p>
+	<% end %>
+<% end %>
 
 <%= link_to 'Edit', edit_video_path(@video) %> |
 <%= link_to 'Back', videos_path %>

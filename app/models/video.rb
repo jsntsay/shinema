@@ -1,5 +1,5 @@
 class Video
-  include Mongoid::Document
+  include Mongoid::Attributes::Dynamic, Mongoid::Document  
   field :title, type: String
   field :link, type: String
 

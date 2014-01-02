@@ -11,14 +11,23 @@
     </div>
   <% end %>
 
+
   <div class="field">
-    <%= f.label :title %><br>
-    <%= f.text_field :title %>
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
   </div>
+
   <div class="field">
-    <%= f.label :link %><br>
-    <%= f.text_field :link %>
+		<%= f.label :link %><br>
+		<%= f.text_field :link %>
   </div>
+
+  <% EventConfig::DYNAMIC_FIELDS['attributes'].keys.each do |attribute| %>
+	<div class="field">
+		<label><%= attribute %></label><br>
+		<input id="video_<%= attribute %>" name="video[<%= attribute %>]" type="text" />
+	</div>
+  <% end %>
   <div class="actions">
     <%= f.submit %>
   </div>
